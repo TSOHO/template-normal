@@ -1,7 +1,7 @@
 {
   "name": "template-normal",
   "version": "0.0.1",
-  "description": "xiaoaojiao template h5 normal",
+  "description": "响应式的静态页面模板，有懒加载和微信分享",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
