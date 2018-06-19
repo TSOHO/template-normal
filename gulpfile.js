@@ -36,7 +36,7 @@ var revCollector = require('gulp-rev-collector')
 var htmlmin = require('gulp-htmlmin')
 var public = ""
 
-gulp.task('rev', function() {
+gulp.task('rev', ['inlinesource', 'libs', 'images'], function() {
   return gulp.src(['rev/**/*.json', './dist/*.html'])
     .pipe(revCollector({
       replaceReved: true,
@@ -55,11 +55,11 @@ gulp.task('rev', function() {
     .pipe(gulp.dest('dist'))
 })
 
-gulp.task('inlinesource', function() {
+gulp.task('inlinesource', ['del'], function() {
   return gulp.src('./*.html')
     .pipe(inlinesource())
     .pipe(positionHack())
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('dist'))
 })
 
 gulp.task('libs', function() {
@@ -68,7 +68,7 @@ gulp.task('libs', function() {
 })
 
 gulp.task('del', function() {
-  del.sync(['./dist/**'])
+  del.sync(['/rev/**,./dist/**'])
 })
 
-gulp.task('default', ['libs', 'inlinesource', 'images', 'rev'])
+gulp.task('default', ['rev'])

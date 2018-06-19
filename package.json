@@ -1,6 +1,6 @@
 {
   "name": "template-normal",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "响应式的静态页面模板，有懒加载和微信分享",
   "main": "index.js",
   "scripts": {
