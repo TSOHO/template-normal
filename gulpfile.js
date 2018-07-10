@@ -68,7 +68,7 @@ gulp.task('libs', function() {
 })
 
 gulp.task('del', function() {
-  del.sync(['/rev/**,./dist/**'])
+  del.sync(['dist/**/**','rev/**/**'])
 })
 
 gulp.task('default', ['rev'])
